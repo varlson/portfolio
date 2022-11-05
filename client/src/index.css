@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.abs-centering {
+  @apply absolute m-auto  right-0 top-0 bottom-0;
+}
+
+.menu-item {
+  @apply flex ml-5 my-2 hover:border w-3/12  p-1 rounded-md hover:w-8/12 duration-200 cursor-pointer hover:transition-all;
+}
+
+.transparente {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.fadein {
+  opacity: 1;
+  transition: opacity 0.4s linear;
+}
+
+.fadeout {
+  opacity: 0;
+  transition: opacity 0.4s linear;
+}
