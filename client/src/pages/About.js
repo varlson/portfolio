@@ -1,43 +1,64 @@
 import React from "react";
 import per from "../files/per.png";
-import "swiper/css/pagination";
-import "swiper/css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
-
+import Slider from "react-slick";
+import Datas from "../test/Datas";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 function About() {
-  const pagination = {
-    clickable: true,
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
   };
 
   return (
-    <div className="bg-yellow-400 grid grid-cols-12 h-screen content-start">
-      <div className="col-span-12 self-start">
+    <div className=" gap-2 grid grid-cols-12 h-screen content-start relative bg-gray-300">
+      <div className="col-span-12 self-start mb-2">
         <h1 className="p-2 ml-4 text-4xl font-thin">Sobre</h1>
-        <h3 className="col-span-12 text-6xl font-medium">Suleimane Ducure</h3>
+        <h3 className="pl-3 col-span-12 text-4xl md:text-6xl font-medium">
+          Suleimane Ducure
+        </h3>
       </div>
 
-      <div className="mt-4 col-span-3 bg-gray-100 justify-self-start drop-shadow-xl">
-        <img className="h-44  object-cover rounded-lg " src={per} alt="" />
+      <div className="mt-4 hidden md:block md:col-span-4 bg-gray-100  drop-shadow-xl p-2 ">
+        <img
+          className="h-52 m-auto object-cover rounded-lg "
+          src={per}
+          alt=""
+        />
       </div>
-      <div className="mt-4 rounded-lg bg-gray-100 col-span-7 p-3 grid content-center text-justify font-medium">
-        <Swiper modules={[Pagination]} pagination={pagination}>
-          <SwiperSlide>
-            <p>
-              {" "}
-              Graduando em computação pela universidade federal de Ouro Preto,
-              estudante pesquisador, entusiasta de tecnologias
-            </p>
-          </SwiperSlide>
 
-          <SwiperSlide>
-            <p>
-              {" "}
-              Graduando em computação pela universidade federal de Ouro Preto,
-              estudante pesquisador, entusiasta de tecnologias
-            </p>
-          </SwiperSlide>
-        </Swiper>
+      {
+        <div className=" px-2 col-span-10 col-start-2 md:col-span-6 mt-2 md:col-start-6 rounded-lg bg-gray-100  drop-shadow-xl">
+          <Slider {...settings}>
+            {Datas.map((data, index) => (
+              <div className=" my-2 text-emerald-900 p-3 rounded-md h-48">
+                <p className="mt-8 text-justify font-medium">{data.dado}</p>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      }
+
+      <div className="bg-white col-span-10 col-start-2 md:col-span-8 md:col-start-3 mt-5 mb-2 rounded-md p-2">
+        <p className="font-bold md:text-xl">Área de Interesse</p>
+        <div className="text-justify p-1 w-11/12 m-auto md:text-2xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+          expedita voluptas mollitia, molestias cum voluptate, magni numquam
+          obcaecati ut itaque velit debitis officiis unde perferendis doloremque
+          sed reprehenderit hic perspiciatis!{" "}
+        </div>
+      </div>
+
+      <div className="bg-white col-span-10 col-start-2 md:col-span-8 md:col-start-3 md:mt-5 mb-2 rounded-md p-2">
+        <p className="font-bold md:text-xl">Pesquisa</p>
+        <div className="p-1 w-11/12 m-auto md:text-2xl text=justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nemo
+          aliquid officiis obcaecati dolore saepe? Beatae ea accusamus.
+        </div>
       </div>
     </div>
   );

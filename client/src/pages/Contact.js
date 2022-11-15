@@ -1,64 +1,88 @@
 import React from "react";
+import per from "../files/per.png";
+import { AiOutlineMail } from "react-icons/ai";
+import { BsTelephoneForward } from "react-icons/bs";
+import { FiInstagram } from "react-icons/fi";
+import { CiFacebook } from "react-icons/ci";
 
 function Contact() {
   return (
-    <div className="bg-amber-700 grid grid-cols-12">
-      <div className="col-span-10 col-start-2">
-        <p>title</p>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
-          adipisci rem culpa quaerat quae nobis neque labore fugiat quis eaque
-          dignissimos explicabo enim, officia necessitatibus consequuntur
-          voluptatibus ratione tenetur cum? Quo impedit quia nobis repudiandae
-          ad, deserunt culpa veniam aliquid in esse blanditiis voluptatum ex,
-          sequi deleniti, dignissimos architecto rerum ducimus inventore sint
-          debitis sed nam cum! Maxime, reiciendis obcaecati? Impedit saepe
-          dolore ipsum aperiam ratione tempore harum fugiat dicta officiis vero!
-          Fugit rem quasi nisi necessitatibus iusto dolores voluptatem, unde
-          sunt totam libero magnam molestiae ipsa iste eaque maiores. Assumenda
-          ipsam cupiditate inventore, suscipit, maxime fugiat veniam ab cum
-          recusandae necessitatibus facere molestiae totam eveniet ullam ut
-          odio? Animi similique ut totam est optio dolor quis earum voluptas
-          libero. Possimus, magni! Exercitationem, facere dolores sapiente sint
-          suscipit sed debitis porro eveniet natus itaque blanditiis magnam
-          corrupti cum autem accusamus. Sint, veniam error aperiam expedita
-          voluptatem magnam doloremque iste eius? Repudiandae fugit quo labore
-          est commodi ullam in aliquam consequatur minus, quasi officia qui
-          tempora, eligendi quam assumenda? Nulla reprehenderit voluptatum
-          officia cumque deleniti nam nobis sint ex repudiandae dolore! Alias
-          ipsa expedita ex eligendi blanditiis non reiciendis veniam maxime
-          voluptatum esse quo debitis, consectetur quam est, incidunt fugiat
-          quasi ratione delectus natus ab laboriosam. Molestias possimus
-          quibusdam laudantium quo. Iure illo nulla a quam reiciendis
-          dignissimos vero sed tempora similique animi aspernatur fuga
-          reprehenderit, fugiat sapiente corporis obcaecati laboriosam in culpa
-          repellat harum optio voluptates cupiditate. Tempora, illum doloribus.
-          Laudantium suscipit nostrum tenetur necessitatibus velit reiciendis id
-          eaque quas recusandae distinctio accusamus itaque saepe, minus aperiam
-          dolor, amet delectus ex explicabo in quisquam aspernatur voluptas
-          soluta! Praesentium, minima expedita? Numquam provident voluptatibus
-          laudantium esse, unde rem! Aperiam ut illo deserunt itaque, excepturi
-          quis asperiores magni! Iure ipsam doloribus, sint unde accusamus nisi
-          harum eius dolores aut quaerat inventore sunt? Praesentium molestias
-          molestiae cumque ut at recusandae esse consequatur laborum! Velit
-          maxime necessitatibus, in soluta aliquid debitis quos blanditiis
-          veritatis itaque officiis ratione. Voluptate aliquid perferendis eos
-          quae quis sit? Earum voluptate impedit aliquam praesentium ex. Neque
-          pariatur, culpa nulla natus debitis id beatae similique odio
-          temporibus consequuntur magnam officiis harum ipsam doloremque aliquid
-          itaque autem optio amet. Ipsum, dicta! Sint, ad. Recusandae nisi porro
-          nobis quibusdam molestiae. Magnam ea maiores quo enim ducimus soluta,
-          sapiente quisquam voluptatibus delectus dicta architecto hic. Nemo
-          excepturi ratione voluptatem aut aperiam iste ducimus. Omnis quibusdam
-          esse officia voluptate cum optio aliquid, alias maxime atque
-          consectetur placeat in inventore nobis architecto facilis
-          exercitationem. Fugiat ullam consectetur obcaecati aliquid fugit
-          nesciunt ea nobis! Aliquid, labore! Odio, amet, provident facilis
-          aperiam labore at corrupti dignissimos doloremque esse cumque dolorem
-          iusto molestias nesciunt vel repellat ab suscipit rem ducimus facere
-          corporis dolorum repellendus. Fugiat ex doloribus voluptatibus!
-          Debitis repellendus voluptatibus earum, vitae nobis corrupti nesciunt
-        </p>
+    <div className=" gap-2 grid grid-cols-12 h-screen content-start relative bg-gray-300">
+      <div className="col-span-12 self-start mb-2">
+        <h1 className="p-2 ml-4 text-4xl font-thin">Contato</h1>
+      </div>
+
+      <div className="hidden md:block col-span-12 md:col-span-2 lg:col-span-2 nd:bg-gray-100  drop-shadow-xl p-2 ">
+        <img
+          className="h-24 md:h-44 object-cover rounded-lg "
+          src={per}
+          alt=""
+        />
+      </div>
+
+      <div className="mt-10 md:mt-1 drop-shadow-lg py-2 rounded-lg grid grid-cols-12 md:col-span-7 lg:col-span-7 lg:col-start-4 col-span-12 bg-white">
+        <div className="grid-cols-12 grid justify-items-center col-span-12 md:w-8/12 m-auto lg:border-gray-500">
+          <div className="p-1 col-span-12 md:col-span-6 flex">
+            <AiOutlineMail className="mr-1 flex self-center" />
+            <p className="">contato@varlson.com</p>
+          </div>
+
+          <div className="p-1 col-span-12 md:col-span-6 flex">
+            <BsTelephoneForward className="mr-1 flex self-center" />
+            <p className="">+55 (31) 99420-4345</p>
+          </div>
+
+          <div className="p-1 col-span-12 md:col-span-6 flex">
+            <FiInstagram className="mr-1 flex self-center" />
+            <p className="">@avrlson</p>
+          </div>
+
+          <div className="p-1 col-span-12 md:col-span-6 flex">
+            <CiFacebook className="mr-1 flex self-center" />
+            <p className="">facebook.com/varlson</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-4 drop-shadow-lg rounded-lg border p-2 grid grid-cols-12 col-span-12 md:col-span-7 md:col-start-4 ">
+        <div className="col-span-12 p-2 w-10/12 m-auto ">
+          <form className="grid grid-cols-12">
+            <input
+              required
+              name="name"
+              className="my-2 m-auto col-span-12 focus:outline focus:rounded-md bg-transparent border-b border-gray-500 w-full p-2  focus:"
+              type="text"
+              placeholder="Nome"
+            />
+
+            <input
+              placeholder="Email"
+              className="m-auto my-2 col-span-12 focus:outline focus:rounded-md bg-transparent border-b border-gray-500 w-full p-2  focus:"
+              type="email"
+              required
+            />
+            <input
+              placeholder="Assunto"
+              className="m-auto my-2 col-span-12 focus:outline focus:rounded-md bg-transparent border-b border-gray-500 w-full p-2  focus:"
+              type="email"
+              required
+            />
+
+            <textarea
+              placeholder="Mensagem"
+              required
+              rows={3}
+              className="my-2 col-span-12 focus:outline focus:rounded-md bg-transparent border-b border-gray-500 p-2 "
+            ></textarea>
+
+            <button
+              className=" justify-self-end col-span-12 w-3/12 md:w-2/12 text-white mt-1 md:px-2 px-4 py-1 rounded-md bg-emerald-700"
+              type="submit"
+            >
+              Enviar
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

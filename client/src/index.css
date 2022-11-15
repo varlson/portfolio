@@ -16,6 +16,10 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+.transparente-light {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .fadein {
   opacity: 1;
   transition: opacity 0.4s linear;
@@ -24,4 +28,20 @@
 .fadeout {
   opacity: 0;
   transition: opacity 0.4s linear;
+}
+
+.abs-center {
+  @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  /* @apply absolute left-0 right-0 h-24; */
+}
+
+.lock {
+  margin-left: -25%;
+  transition: all 0.4s linear;
+}
+
+.unlock {
+  left: 0;
+  width: 25%;
+  transition: all 0.4s linear;
 }
