@@ -5,11 +5,17 @@ import contact from "../files/contacts.png";
 import image from "../files/image.png";
 import greet from "../files/greet.png";
 import service from "../files/Service.png";
+import { useContext } from "react";
+import AuthContext from "../Context/AuthContext";
 function Dashboard() {
+  const { User } = useContext(AuthContext);
+
   return (
     <div className="bg-cost-cinza h-screen font-Jura">
       <div className="grid-cols-2 bg-costom-green grid h-16 text-white">
-        <div className="self-center px-3 text-xl">admin@varlson.com</div>
+        <div className="self-center px-3 text-xl">
+          {User.email || "admin@varlson.com"}
+        </div>
         <select className="mr-6 px-6 py-2  bg-transparent self-center justify-self-end rounded-lg border border-gray-100">
           <option className="text-black" value="">
             Sites

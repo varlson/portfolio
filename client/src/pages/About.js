@@ -35,7 +35,10 @@ function About() {
         <div className=" px-2 col-span-10 col-start-2 md:col-span-6 mt-2 md:col-start-6 rounded-lg bg-gray-100  drop-shadow-xl">
           <Slider {...settings}>
             {Datas.map((data, index) => (
-              <div className=" my-2 text-emerald-900 p-3 rounded-md h-48">
+              <div
+                key={index}
+                className=" my-2 text-emerald-900 p-3 rounded-md h-48"
+              >
                 <p className="mt-8 text-justify font-medium">{data.dado}</p>
               </div>
             ))}

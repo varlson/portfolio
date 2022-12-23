@@ -1,0 +1,42 @@
+Axios.post(
+      "login",
+      {
+        email: credentials.email,
+        password: credentials.password,
+      },
+      {
+        withCredentials: true,
+      }
+    )
+      .then(async (res) => {
+        console.log(res.data.isAuth);
+        setisAuth(res.data.isAuth);
+
+        setErrorMsg(null);
+
+        Axios.get("me", { withCredentials: true })
+          .then((response) => {
+            const { user } = response.data;
+            setUser(user);
+            console.log(`from me ${User.name}`);
+          })
+          .catch((error) => {
+            console.log(error);
+            return error;
+          });
+
+        hit("/admin");
+      })
+      .catch((error) => {
+        // console.log("from cathch");
+        console.log(error);
+        setErrorMsg(error.response.data.msg);
+      });
+
+    console.log("from res");
+    // console.log(res);
+    const form = document.getElementsByTagName("form")[0];
+    form.classList.add("teste");
+    setInterval(() => {
+      form.classList.remove("teste");
+    }, 1);

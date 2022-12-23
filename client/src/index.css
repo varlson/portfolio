@@ -45,3 +45,49 @@
   width: 25%;
   transition: all 0.4s linear;
 }
+
+@keyframes anim {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  25% {
+    top: 0px;
+    left: 50px;
+  }
+  50% {
+    top: 50px;
+    left: 50px;
+  }
+  75% {
+    top: 50px;
+    left: 0px;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+  }
+}
+.mine-anim {
+  animation-name: anim;
+  animation-duration: 3s;
+  /* animation-iteration-count: infinite; */
+}
+
+.teste {
+  animation-name: anima;
+  /* animation-iteration-count: infinite; */
+  animation-duration: 0.3s;
+}
+
+@keyframes anima {
+  0% {
+    @apply justify-self-center;
+  }
+  50% {
+    @apply justify-self-start;
+  }
+  100% {
+    @apply justify-self-center;
+  }
+}

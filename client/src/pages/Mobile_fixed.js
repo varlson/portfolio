@@ -18,7 +18,7 @@ function Mobile_fixed() {
   };
   return (
     <div className="h-screen bg-green-900 text-white text-2xl">
-      <div className="pl-5 pt-10 flex flex-col bg-red-400">
+      <div className="pl-5 pt-10 flex flex-col">
         <a className="p-2" href="#home_mobile">
           <VscHome />
         </a>
