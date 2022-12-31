@@ -1,6 +1,6 @@
 const Datas = [
   {
-    dado: "Graduando do curso da ciência da computação na universidade federal de Ouro Preto",
+    dado: "Graduando do curso da ciência da computação na universidade federal de Ouro Preto desde segundo semestre de 2019.",
   },
   {
     dado: "Estudante pesquisador da área de redes complexas e entusiasta de tecnologias em geral",

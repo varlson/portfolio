@@ -9,6 +9,7 @@ const {
 } = require("../middleware/Auth");
 
 require("../Model/User");
+require("../Model/About");
 const User = mongoose.model("Users");
 router.get("/", isAuth, (req, res) => {
   return res.status(200).json({
@@ -148,4 +149,15 @@ router.get("/loged", isAuth, (req, res) => {
     isAuth: false,
   });
 });
+
+router.get("/about", (req, res) => {
+  const about = mongoose.model("About");
+
+  about.find({}, (error, succ) => {
+    return res.status(200).json({
+      succ: succ,
+    });
+  });
+});
+
 module.exports = router;
