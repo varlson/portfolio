@@ -19,9 +19,6 @@ router.get("/", isAuth, (req, res) => {
 
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  // console.log(email, password);
-  // return res.status(200).json({ email, password });
-  // console.log(req.body);
   User.findOne({ email: email }, async (error, user) => {
     if (user) {
       const isAuth = await bcrypt.compare(password, user.password);
@@ -72,20 +69,6 @@ router.post("/register", async (req, res) => {
     });
   }
 
-  //   User.findOneAndDelete({ email: email }, (error, dados) => {
-  //     if (dados) {
-  //       return res.status(200).json({
-  //         msg: "Usuario deletado com sucesso",
-  //         dados: dados,
-  //       });
-  //     } else {
-  //       return res.status(500).json({
-  //         msg: "Usuario nao existe",
-  //         error: error,
-  //       });
-  //     }
-  //   });
-
   const salt = await bcrypt.genSalt(10);
   const hashedPass = await bcrypt.hash(password, salt);
 
@@ -125,8 +108,6 @@ router.get("/me", isAuth, async (req, res) => {
       id: id ? id : null,
     });
   }
-  // console.log(`erro ${id}`);
-  // console.log(id);
   try {
     User.findById(id, { password: 0, _id: 0 }, (error, user) => {
       if (user) {
@@ -146,14 +127,9 @@ router.get("/me", isAuth, async (req, res) => {
       error: error,
     });
   }
-
-  // console.log(req);
-  // return res.status(200).json({});
 });
 
 router.get("/dados", (req, res) => {
-  console.log(req.cookies);
-
   res.send({
     token: req.cookies,
     msg: "all done here!",

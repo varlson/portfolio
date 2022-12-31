@@ -23,7 +23,7 @@ function About() {
         </h3>
       </div>
 
-      <div className="mt-4 hidden md:block md:col-span-4 bg-gray-100  drop-shadow-xl p-2 ">
+      <div className="mt-4 hidden md:block md:col-span-3   drop-shadow-xl p-2 ">
         <img
           className="h-52 m-auto object-cover rounded-lg "
           src={per}
@@ -32,21 +32,21 @@ function About() {
       </div>
 
       {
-        <div className=" px-2 col-span-10 col-start-2 md:col-span-6 mt-2 md:col-start-6 rounded-lg bg-gray-100  drop-shadow-xl">
+        <div className=" px-2 col-span-10 col-start-2 md:col-span-7 mt-2 md:col-start-5 rounded-lg bg-gray-100  drop-shadow-xl">
           <Slider {...settings}>
             {Datas.map((data, index) => (
               <div
                 key={index}
                 className=" my-2 text-emerald-900 p-3 rounded-md h-48"
               >
-                <p className="mt-8 text-justify font-medium">{data.dado}</p>
+                <p className="mt-8 text-justify text-2xl">{data.dado}</p>
               </div>
             ))}
           </Slider>
         </div>
       }
 
-      <div className="bg-white col-span-10 col-start-2 md:col-span-8 md:col-start-3 mt-5 mb-2 rounded-md p-2">
+      <div className="bg-white col-span-10 col-start-2 md:col-span-7 md:col-start-5 mt-5 mb-2 rounded-md p-2">
         <p className="font-bold md:text-xl">Área de Interesse</p>
         <div className="text-justify p-1 w-11/12 m-auto md:text-2xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
@@ -56,7 +56,7 @@ function About() {
         </div>
       </div>
 
-      <div className="bg-white col-span-10 col-start-2 md:col-span-8 md:col-start-3 md:mt-5 mb-2 rounded-md p-2">
+      <div className="bg-white col-span-10 col-start-2 md:col-span-7 md:col-start-5 md:mt-5 mb-2 rounded-md p-2">
         <p className="font-bold md:text-xl">Pesquisa</p>
         <div className="p-1 w-11/12 m-auto md:text-2xl text=justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nemo
