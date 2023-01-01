@@ -17,21 +17,27 @@ function About() {
     autoplay: true,
   };
 
-  const [info, setInfo] = useState();
-  const [slide, setSlide] = useState([]);
   const [about, setAbout] = useState(null);
 
+  const loadAbout = async () => {
+    return new Promise((resolve, reject) => {
+      axios
+        .get("https://varlson-api.onrender.com/about")
+        .then((res) => {
+          resolve(res.data.succ[0]);
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  };
+
   useEffect(() => {
-    axios
-      .get("http://localhost:9000/auth/about")
-      .then((res) => {
-        setAbout(res.data.succ[0]);
-        console.log(about);
-        // console.log(res.data.succ[0]);
+    loadAbout()
+      .then((data) => {
+        setAbout(data);
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   }, []);
 
   return (
