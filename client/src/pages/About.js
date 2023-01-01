@@ -7,6 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
+import { useContext } from "react";
+import AuthContext, { AuthProvider } from "../Context/AuthContext";
 function About() {
   const settings = {
     dots: true,
@@ -17,28 +19,7 @@ function About() {
     autoplay: true,
   };
 
-  const [about, setAbout] = useState(null);
-
-  const loadAbout = async () => {
-    return new Promise((resolve, reject) => {
-      axios
-        .get("https://varlson-api.onrender.com/about")
-        .then((res) => {
-          resolve(res.data.succ[0]);
-        })
-        .catch((error) => {
-          reject(error);
-        });
-    });
-  };
-
-  useEffect(() => {
-    loadAbout()
-      .then((data) => {
-        setAbout(data);
-      })
-      .catch((error) => {});
-  }, []);
+  const { data, setData } = useContext(AuthContext);
 
   return (
     <div className=" gap-2 grid grid-cols-12 h-screen content-start relative bg-gray-300">
@@ -59,9 +40,9 @@ function About() {
 
       {
         <div className=" px-2 col-span-10 col-start-2 md:col-span-7 mt-2 md:col-start-5 rounded-lg bg-gray-100  drop-shadow-xl">
-          {about ? (
+          {data ? (
             <Slider {...settings}>
-              {about.about.map((data, index) => (
+              {data.data.map((data, index) => (
                 <div
                   key={index}
                   className=" my-2 text-emerald-900 p-3 rounded-md h-48"
@@ -86,7 +67,7 @@ function About() {
       <div className="bg-white col-span-10 col-start-2 md:col-span-7 md:col-start-5 md:mt-5 mb-2 rounded-md p-2">
         <p className="font-bold md:text-xl">Pesquisa</p>
         <div className="p-1 w-11/12 m-auto md:text-xl text=justify">
-          {about ? about.search : <p>Processing</p>}
+          {data ? data.search : <p>Processing</p>}
         </div>
       </div>
     </div>

@@ -16,10 +16,34 @@ import Protected from "./setup/Protected";
 import { useEffect } from "react";
 import AuthContext, { AuthProvider } from "./Context/AuthContext";
 import { useContext } from "react";
-import Requisitons from "./backend/Req";
+import axios from "axios";
 function App() {
-  const { setisAuth } = useContext(AuthContext);
-  // const navigate = useNavigate();
+  const { data, setData } = useContext(AuthContext);
+
+  const loadAbout = async () => {
+    return new Promise((resolve, reject) => {
+      axios
+        .get("https://varlson-api.onrender.com/about")
+        .then((res) => {
+          resolve(res.data.succ[0]);
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  };
+
+  useEffect(() => {
+    loadAbout()
+      .then((res) => {
+        console.log(res);
+        setData(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>
