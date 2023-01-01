@@ -18,7 +18,7 @@ import AuthContext, { AuthProvider } from "./Context/AuthContext";
 import { useContext } from "react";
 import axios from "axios";
 function App() {
-  const { data, setData } = useContext(AuthContext);
+  const { data, setDate } = useContext(AuthContext);
 
   const loadAbout = async () => {
     return new Promise((resolve, reject) => {
@@ -36,10 +36,11 @@ function App() {
   useEffect(() => {
     loadAbout()
       .then((res) => {
+        setDate(res);
         console.log(res);
-        setData(res);
       })
       .catch((error) => {
+        // console.error("deu erro");
         console.log(error);
       });
   }, []);

@@ -42,7 +42,7 @@ function About() {
         <div className=" px-2 col-span-10 col-start-2 md:col-span-7 mt-2 md:col-start-5 rounded-lg bg-gray-100  drop-shadow-xl">
           {data ? (
             <Slider {...settings}>
-              {data.data.map((data, index) => (
+              {data.about.map((data, index) => (
                 <div
                   key={index}
                   className=" my-2 text-emerald-900 p-3 rounded-md h-48"
