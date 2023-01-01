@@ -79,10 +79,7 @@ function About() {
       <div className="bg-white col-span-10 col-start-2 md:col-span-7 md:col-start-5 mt-5 mb-2 rounded-md p-2">
         <p className="font-bold md:text-xl">Área de Interesse</p>
         <div className="text-justify p-1 w-11/12 m-auto md:text-xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-          expedita voluptas mollitia, molestias cum voluptate, magni numquam
-          obcaecati ut itaque velit debitis officiis unde perferendis doloremque
-          sed reprehenderit hic perspiciatis!{" "}
+          Lorem ipsum dolor sit amet
         </div>
       </div>
 
