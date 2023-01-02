@@ -44,18 +44,20 @@ function Login() {
     e.preventDefault();
     Requisitons.login(credentials)
       .then((isAuth) => {
-        // console.log(isAuth);
+        console.log(isAuth);
         Requisitons.getMe()
           .then((user) => {
-            // console.log(user);
+            console.log(user);
             setisAuth(isAuth);
             setUser(user);
             navigate("/admin");
           })
-          .catch((error) => {});
+          .catch((error) => {
+            console.log("ocorreu erro no login");
+          });
       })
       .catch((error) => {
-        // console.log(error);
+        console.log(error);
       });
   };
 

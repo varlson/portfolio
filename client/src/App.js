@@ -33,17 +33,17 @@ function App() {
     });
   };
 
-  useEffect(() => {
-    loadAbout()
-      .then((res) => {
-        setDate(res);
-        console.log(res);
-      })
-      .catch((error) => {
-        // console.error("deu erro");
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   loadAbout()
+  //     .then((res) => {
+  //       setDate(res);
+  //       console.log(res);
+  //     })
+  //     .catch((error) => {
+  //       // console.error("deu erro");
+  //       console.log(error);
+  //     });
+  // }, []);
 
   return (
     <BrowserRouter>

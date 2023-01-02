@@ -7,11 +7,13 @@ const Requisitons = {
     return new Promise((resolve, rej) => {
       Axios.post("/login", user, { withCredentials: true })
         .then((res) => {
+          console.log("sucessi");
           const { isAuth } = res.data;
           resolve(isAuth);
         })
         .catch((error) => {
-          //   console.log(error.response.data.isAuth);
+          console.log("ocorreu erro no login");
+          console.log(error);
           rej(error.response.data.isAuth);
         });
     });
